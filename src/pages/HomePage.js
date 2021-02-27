@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { ShopContext } from "../context/shopContext"
 
 const HomePage = () => {
@@ -15,7 +16,9 @@ const HomePage = () => {
   return (
     <div>
       {products.map((product) => (
-        <h1 key={product.title}>{product.title}</h1>
+        <Link to={`/products/${product.handle}`} key={product.title}>
+          <p>{product.title}</p>
+        </Link>
       ))}
     </div>
   )
