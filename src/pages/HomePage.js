@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { ShopContext } from "../context/shopContext"
-import { Box, Grid, Text, Image } from "@chakra-ui/react"
+import { Box, Text, Grid, Image } from "@chakra-ui/react"
 
 const HomePage = () => {
   const { fetchAllProducts, products } = useContext(ShopContext)
