@@ -9,6 +9,8 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Button,
+  Grid,
+  Text,
 } from "@chakra-ui/react"
 
 const Cart = () => {
@@ -24,7 +26,14 @@ const Cart = () => {
             <DrawerCloseButton />
             <DrawerHeader>Your Shopping Cart</DrawerHeader>
 
-            <DrawerBody>This is Your Cart</DrawerBody>
+            <DrawerBody>
+              {checkout.lineItems &&
+                checkout.lineItems.map((item) => (
+                  <Grid templateColumns="repeat(4, 1fr)" gap={1} key={item.id}>
+                    <Text>{item.title}</Text>
+                  </Grid>
+                ))}
+            </DrawerBody>
 
             <DrawerFooter>
               <Button>Checkout</Button>
